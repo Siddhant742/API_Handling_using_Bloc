@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: Text('API Handling'),
       ),
-      body: Container(),
+      body: Container( ),
     );
   }
 }

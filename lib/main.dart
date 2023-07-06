@@ -1,8 +1,17 @@
+import 'dart:math';
+
+import 'package:api_handling_using_bloc/model/Repository/Todo_Repository.dart';
+import 'package:api_handling_using_bloc/model/models/Todo_model.dart';
 import 'package:api_handling_using_bloc/view/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
+  TodoRepository todoRepository = TodoRepository();
+  List<TodoModel> TodoModels = await todoRepository.fechRequests()  ;
+  print(TodoModels);
+
 }
 
 class MyApp extends StatelessWidget {
