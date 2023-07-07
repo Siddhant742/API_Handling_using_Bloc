@@ -1,9 +1,12 @@
 import 'dart:math';
 
+import 'package:api_handling_using_bloc/controller/cubits/Todo_Cubit.dart';
+import 'package:api_handling_using_bloc/controller/states/Todo_State.dart';
 import 'package:api_handling_using_bloc/model/Repository/Todo_Repository.dart';
 import 'package:api_handling_using_bloc/model/models/Todo_model.dart';
 import 'package:api_handling_using_bloc/view/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,13 +23,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return BlocProvider<TodoCubit>(
+      create: (BuildContext context) => TodoCubit() ,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }
