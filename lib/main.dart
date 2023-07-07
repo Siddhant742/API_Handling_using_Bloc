@@ -11,9 +11,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
-  TodoRepository todoRepository = TodoRepository();
-  List<TodoModel> TodoModels = await todoRepository.fechRequests()  ;
-  print(TodoModels);
+  // TodoRepository todoRepository = TodoRepository();
+  // List<TodoModel> TodoModels = await todoRepository.fechRequests()  ;
+  // print(TodoModels);
 
 }
 
